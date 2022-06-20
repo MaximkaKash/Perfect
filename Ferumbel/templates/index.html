@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <meta name="google-site-verification" content="9UVYJC9QyeH-gubaDOpEwAVkhScj16YvZAPWsi7DEkw" />
+    <meta name="yandex-verification" content="337a3277831cd937" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OOO"ФерумБел"</title>
+    {% load bootstrap3 %}
+    <script src="{% bootstrap_jquery_url %}"></script>
+    {% bootstrap_javascript %}
+    {% bootstrap_css %}
+     <link rel="icon" href="https://ferumbel.by/favicon.ico" type="image/x-icon">
+
+    <link rel="shortcut icon" type="image/ico" href="/media/photos/favicon.ico"/>
+    {#    <link rel="stylesheet" href="../../bootstrap-3.3.7-dist/css/bootstrap.css">#}
+    <link rel="stylesheet" href="/static/styles/header.css">
+    <link rel="stylesheet" href="/static/styles/index.css">
+</head>
+<body>
+
+<section class="content">
+
+
+    <section class="mainName">
+        <section class="name">
+            ООО "ФерумБел"
+        </section>
+    </section>
+
+    <section class="row">
+        <section class="col-lg-12  col-sm-12 col-md-12 col-12 discription">
+            <section class="value">
+                {{ text.value }}
+            </section>
+        </section>
+    </section>
+
+    <section>
+
+        
+            <section class="row">
+                <section class="col-lg-12  col-sm-12 col-md-12 col-12 photo">
+                    <section style="display:block;" >{% for phot in photo %}<img class="photo_animate"  src="{{ phot.Image.url }}" alt="">{% endfor%}</section>
+                </section>
+            </section>
+        
+
+
+<script src="/static/scripts/header.js"></script>
+        <section class="benefits_name">
+           
+            Популярные товары
+            
+        </section>
+
+        <section class="products">
+            {% for product in products %}
+                <section class=" product">
+                    
+                    <section class="min_product">
+                        
+                        <section class="photo">
+                            <a href="/product/{{ product.id }}/">
+                                <img src="{{ product.Image.url }}" alt="">
+                                </a>
+                        </section>
+                        <section class="coast">
+                           
+                            {{ product.coast }}р.
+                            
+                        </section>
+                        <section class="name">
+                        
+                            {{ product.name }}
+                            
+                        </section>
+                        
+                    </section>
+                
+                </section>
+            {% endfor %}
+
+        </section>
+
+
+        <section class="benefits_name_2">
+            Наши преимущества
+        </section>
+
+
+        <section class="benefits">
+
+            {% for benefit in benefits %}
+                <section class="benefit">
+                    <section class="photo">
+                        <img src="{{ benefit.photo.url }}" alt="">
+                    </section>
+                    <section class="name">
+                        {{ benefit.value }}
+                    </section>
+                </section>
+            {% endfor %}
+        </section>
+
+        <section class="benefits_name">
+            
+            Основные направления
+            
+        </section>
+
+        <section class="row products">
+            {% for category in categorys %}
+
+                <section class="col-lg-4  col-sm-4 col-md-4 col-4 product">
+                    
+                    <section class="min_product">
+                        <a href="/category/{{ category.id}}/">
+                        <section class="photo">
+                            <img src="{{ category.Photo.url }}" alt="">
+                        </section>
+                        </a>
+                        <section class="name add">
+                            {{ category.Text }}
+                        </section>
+                        
+                    </section>
+                    
+                </section>
+            {% endfor %}
+        </section>
+
+    </section>
+</section>
+
+
+</body>
+{% endblock %}
+
