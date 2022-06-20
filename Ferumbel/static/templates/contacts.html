@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Контакты</title>
+    {% load bootstrap3 %}
+    <script src="{% bootstrap_jquery_url %}"></script>
+    {% bootstrap_javascript %}
+    {% bootstrap_css %}
+    <link rel="shortcut icon" type="image/ico" href="/media/photos/favicon.ico"/>
+{#    <link rel="stylesheet" href="../../bootstrap-3.3.7-dist/css/bootstrap.css">#}
+    <link rel="stylesheet" href="/static/styles/header.css">
+    <link rel="stylesheet" href="/static/styles/contacts.css">
+</head>
+<body>
+
+
+<script src="/static/scripts/header.js"></script>
+
+<section class="content">
+
+
+
+<section class="mainName">
+    <section class="name">
+        Контакты
+    </section>
+</section>
+
+
+<section class="row contacts">
+{% for contact in contacts %}
+    <section class="contact">
+        <section class="col-lg-4 col-sm-4  col-md-4 col-4 Name">
+            {{ contact.pole}}
+        </section>
+        <section class="col-lg-5 col-sm-5  col-md-5 col-5 value">
+            {{ contact.value}}
+        </section>
+        {% if contact.adr %}
+        <a href="{{ contact.adr }}" target="_blank" class="col-lg-3 col-sm-3  col-md-3 col-3 url">
+            Открыть
+        </a>
+        {% endif %}
+    </section>
+{% endfor %}
+
+</section>
+
+
+</section>
+
+
+
+</body>
+{% endblock %}

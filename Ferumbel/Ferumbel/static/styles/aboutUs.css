@@ -1,0 +1,118 @@
+
+    .big_discription{
+        margin: 3em 0em;
+        color: #170631 !important;
+        font-size: 1.5em;
+        padding: 0% 5%;
+        
+
+    }
+
+    .little_discription{
+        margin: 4em 0em;
+        color: #170631 !important;
+        font-size: 1.2em;
+        padding: 0% 5%;
+        
+    }
+    
+
+
+    .timetable{
+        margin: 2em 0em;
+        color: #170631 !important;
+    font-size: 1.5em;
+    text-align: center;
+    }
+
+       .table{
+        font-size: 1.2em;
+        width:100%;
+        margin-bottom:5em;
+       }
+        .timetable_value{
+            
+            text-align: center;
+            color: #170631 !important;
+            
+        }
+
+        .str{
+            display: flex;
+            position: relative;
+           flex-wrap: wrap;
+        }
+        .stab{
+            width: 15%;
+        }
+        .column{
+            
+            width:10%;
+        }
+
+        .cell{
+            border:solid 2px #170631;
+            transition: 100ms ease-in-out;
+            margin:0.1em;
+            padding: 0.2em 0em !important;
+        }
+
+        @media(max-width:1100px){
+            .table{
+                font-size: 1.0em;
+                width:100%;
+                margin-bottom:4em;
+               }
+        }
+
+        @media(max-width:900px){
+            .big_discription{
+                margin: 3em 0em;
+                color: #170631 !important;
+                font-size: 1.2em;
+                padding: 0% 5%;
+                
+        
+            }
+        
+            .little_discription{
+                margin: 4em 0em;
+                color: #170631 !important;
+                font-size: 1.0em;
+                padding: 0% 5%;
+                
+            }
+
+            .stab{
+                width: 1%;
+            }
+            .column{
+                
+                width:14%;
+            }
+            .table{
+                font-size: 0.9em;
+                width:100%;
+                margin-bottom:3em;
+               }
+        }
+        
+        @media(max-width:600px){
+            .table{
+                font-size: 1.2em;
+                width:100%;
+                margin-bottom:3em;
+               }
+            .stab{
+                width: 0%;
+            }
+            .column{
+                position: relative;
+                left:50%;
+                width:60%;
+                transform: translate3d(-50%,0,0);
+                margin-bottom:0.5em;
+            }
+        }
+
+        

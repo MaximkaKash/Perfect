@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Корзина</title>
+    {% load bootstrap3 %}
+    <script src="{% bootstrap_jquery_url %}"></script>
+    {% bootstrap_javascript %}
+    {% bootstrap_css %}
+    <link rel="shortcut icon" type="image/ico" href="/media/photos/favicon.ico"/>
+    {#    <link rel="stylesheet" href="../../bootstrap-3.3.7-dist/css/bootstrap.css">#}
+    <link rel="stylesheet" href="/static/styles/header.css">
+    <link rel="stylesheet" href="/static/styles/basket.css">
+
+</head>
+<body>
+
+<script src="/static/scripts/header.js"></script>
+<form method="POST">
+    <section class="content">
+        {% csrf_token %}
+
+        <section class="mainName">
+            <section class="name">
+                Корзина
+            </section>
+        </section>
+
+
+        <section class="basket_name">
+            Оформление заказа
+        </section>
+
+                <section class="data">
+
+
+            <section class="topic ">
+                <section class=" name">Ф.И.О.</section>
+                {% if name == None %}
+                <input class=" value" name="username" value=""></input>
+                {% else %}
+                    <input class=" value" name="username" value="{{ name }}"></input>
+                {% endif %}
+            </section>
+            <section class="topic ">
+                <section class=" name">Телефон</section>
+                {% if phone == None %}
+                <input class=" value" name="phone" value=""></input>
+                {% else %}
+                <input class=" value" name="phone" value="{{ phone }}"></input>
+                {% endif%}
+
+            </section>
+            <section class="topic ">
+                <section class=" name">Способ доставки</section>
+                <section class=" option">
+                {% if punt == True %}
+                <section class="task">
+                    <input id="sam" name="ch" value="{{ False }}" class="radiobut" type="radio"></input>
+                    <input readonly value="Самовывоз" class="value"></input>
+                </section>
+                <section class="task">
+                    <input id="dos" name="ch" checked class="radiobut" value="{{ True }}" type="radio"></input>
+                    <input readonly value="Доставка" class="value"></input>
+                </section>
+                {% else %}
+                <section class="task">
+                    <input id="sam" name="ch" value="{{ False }}" checked  class="radiobut" type="radio"></input>
+                    <input readonly value="Самовывоз" class="value"></input>
+                </section>
+                <section class="task">
+                    <input id="dos" name="ch" class="radiobut" value="{{ True }}" type="radio"></input>
+                    <input readonly value="Доставка" class="value"></input>
+                </section>
+                {% endif %}
+                </section>
+            </section>
+            <section id="adres" class="topic" style="display: flex !important;">
+                <section class=" name">Адрес</section>
+                {% if phone == None %}
+                <input class=" value" name="address" value="Фоминых 46/2-1"></input>
+                {% else %}
+                <input class=" value" name="address" value="{{ address }}"></input>
+                {% endif%}
+
+            </section>
+            <section class="topic ">
+                <section class=" name ">Комментарий к заказу</section>
+                <textarea class=" value comm" name="comment"></textarea>
+            </section>
+
+        </section>
+
+        <script src="/static/scripts/basket.js"></script>
+
+        <section class="result">
+            <section class="quantity">{{ result }} товар(а)</section>
+            <section class="money">Итог: {{ sum }} р.</section>
+            {% if a == True %}
+            <div class="alert alert-success">
+                Заказ успешно оформлен
+            </div>
+            {% endif %}
+            <button class="button">Оформить заказ</button>
+            <button class="button">
+                <a href="/file/">Скачать файл с поролем
+            </a>
+            </button>
+        </section>
+        {% if purhcase %}
+            <section class="basket_name">
+                Товары:
+            </section>
+
+            <section class="products">
+                <section class="param">
+                    <section class="conteiner">
+                        <section class="name"></section>
+                        <section class="name"></section>
+                    </section>
+                    <section class="quality">Количество</section>
+                    <section class="quality">Цена</section>
+                </section>
+                {% for purchas in purhcase %}
+                    <section class="product">
+                        <section class="conteiner">
+                            <section class="name"> {{ purchas.product.name }}</section>
+                            <section class="name">Код товара: №{{ purchas.product.id }}</section>
+                        </section>
+                        <section class="quality">{{ purchas.count }}</section>
+                        <section class="quality">{{ purchas.product.coast }}р.</section>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <button class="delete" value="{{ purchas.id }}" name="delete">X</button>
+                        </form>
+                    </section>
+                {% endfor %}
+            </section>
+        {% else %}
+            <section class="none" style="font-size: 3em; margin: 2em 0em;">
+        </section>
+    {% endif %}
+
+    </section>
+</form>
+</body>
+{% endblock %}

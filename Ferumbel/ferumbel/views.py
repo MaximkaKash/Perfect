@@ -25,6 +25,30 @@ def sitemap(request):
     return render(request, "sitemap.xml")
 
 
+class Index(TemplateView):
+    template_name = "index.html"
+
+    def get_context_data(self, **kwargs):
+        image = Image.objects.all()
+        text = Text.objects.all()
+        benefits = Benefits.objects.all()
+        # photo = Photos.objects.all()
+        product = Product.objects.all().order_by("-popular")[0:3]
+        products = Product.objects.all()
+        # product = product.objects.order_by("popular")
+        category = Category.objects.all().order_by("-is_main")[0:3]
+        # category = category.filter(name="is_main").order_by("-is_main")
+        return {
+            "photo": image,
+            "benefits": benefits,
+            "text": text.get(id=1),
+            # "photo": photo.get(id=1),
+            'product': products,
+            "products": product,
+            "categorys": category,
+            "Text": text.get(id=2),
+        }
+
 def get_file(request):
     filename = "Login_and_password.txt"
     content = "Добрый день, компания Ферумбел заботится, чтобы Вы не потеряли логин и пороль для последующего входа." + "\n" + "Логин: " + str(
@@ -146,31 +170,6 @@ class ProductsView(TemplateView):
                 "min_price": c,
                 "max_price": d,
                 }
-
-
-class Index(TemplateView):
-    template_name = "index.html"
-
-    def get_context_data(self, **kwargs):
-        image = Image.objects.all()
-        text = Text.objects.all()
-        benefits = Benefits.objects.all()
-        # photo = Photos.objects.all()
-        product = Product.objects.all().order_by("-popular")[0:3]
-        products = Product.objects.all()
-        # product = product.objects.order_by("popular")
-        category = Category.objects.all().order_by("-is_main")[0:3]
-        # category = category.filter(name="is_main").order_by("-is_main")
-        return {
-            "photo": image,
-            "benefits": benefits,
-            "text": text.get(id=1),
-            # "photo": photo.get(id=1),
-            'product': products,
-            "products": product,
-            "categorys": category,
-            "Text": text.get(id=2),
-        }
 
 
 def category_view(request, *args, **kwargs):

@@ -1,0 +1,398 @@
+
+
+
+
+.discription{
+    font-size: 1.2em;
+    margin-top: 5em;
+    color: #170631 !important;
+width:80%;
+text-align:center;
+left:50%;
+top: 50%;
+transform:translate3d(-50%,0,0);
+}
+
+.photo {
+   margin-top: 5em;
+    position: relative;
+   width:100%;
+  height: 400px;
+    overflow: hidden;
+    margin-bottom: 3em;
+    justify-content: center;
+   
+}
+
+
+
+.photo img{
+    position: relative;
+    height: auto;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);
+
+}
+
+img.photo_animate {
+    transform: translate3d(-50%,0,0) !important;
+}
+
+
+
+
+.partition{
+    color: #170631 !important;
+    margin-top: 3em;
+    margin-left: 2em;
+    font-size: 2em;
+}
+
+
+.products{
+    
+    margin: 5em 0em !important;
+    display: flex;
+}
+
+.product{
+    position: relative;
+    padding: 0em;
+    width:33%;
+}
+
+.min_product{
+    transition: 0.5s !important;
+    color: #170631 !important;
+    transform: translate3d(-50%,0,0);
+    margin-left: 50%;
+    width: 300px;
+    border:solid 2px #170631;
+    transition: 100ms ease-in-out;
+    border-radius: 20px;
+}
+
+.min_product:hover{
+    
+    background-color: #170631;
+    color: #FFFFFF !important;
+    transform: translate3d(-50%,0,0);
+    margin-left: 50%;
+    width: 300px;
+    border:solid 2px #170631;
+    transition: 100ms ease-in-out;
+    border-radius: 20px;
+
+}
+
+.product .photo {
+    left:50%;
+    transform: translate3d(-50%,0,0);
+    margin: 0em !important;
+    width:250px;
+    height: 250px;
+}
+
+.product .photo img {
+    border-radius: 10px;
+}
+
+
+.product .coast{
+    margin: 10px 20px;
+    font-size: 1.5em;
+    font-weight: bolder;
+    
+}
+
+.product .name{
+    margin: 10px 20px;
+    font-size: 1.5em;
+    height: 60px !important;
+    overflow: hidden !important;
+    
+}
+
+
+.benefits_name{
+    color: #170631 !important;
+    font-size: 2em;
+    text-align: center;
+margin:3em 0em 1em 0em;
+}
+.benefits_name_2{
+    color: #FFFFFF !important;
+    background-color:#170631 !important;
+    font-size: 2em;
+    text-align: center;
+margin:3em 0em 0em 0em;
+padding-top:1.0em;
+padding-bottom:0.5em;
+}
+
+.benefits{
+    background-color: #170631;
+    display:flex;
+    padding-bottom:1.5em;
+    }
+    .benefit{
+    width: 25%;
+    }
+    .benefit .photo{
+
+        margin: 1em 0em;
+    width:120px;
+    height: 150px;
+
+    left: 50%;
+    transform: translate3d(-50%,0,0);
+    }
+    .benefit .name{
+        margin: 1em 0em;
+        text-align: center;
+    color:#FFFFFF;
+    font-size: 1.2em;
+    font-weight: bolder;
+    }
+
+    .add{
+
+        text-align: center;
+    }
+
+
+@media(max-width:1100px){
+    .discription{
+        font-size: 1em;
+        margin-top: 3em !important;
+        color: #170631 !important;
+    width:70%;
+    }
+
+    .photo {
+        margin-top: 2em;
+         position: relative;
+        width:100%;
+       height: 200px;
+         overflow: hidden;
+         margin-bottom: 1em;
+         justify-content: center;
+        
+     }
+
+    .min_product{
+         transition: 0.5s !important;
+        color: #170631 !important;
+        transform: translate3d(-50%,0,0);
+        margin-left: 50%;
+        width: 150px;
+        border:solid 1px #170631;
+        transition: 100ms ease-in-out;
+        border-radius: 20px;
+    }
+
+    .min_product:hover{
+        background-color: #170631;
+        color: #FFFFFF !important;
+        transform: translate3d(-50%,0,0);
+        margin-left: 50%;
+        width: 150px;
+        border:solid 1px #FFFFFF;
+        transition: 100ms ease-in-out;
+        border-radius: 20px;
+    
+    }
+
+    .product .photo {
+        left:50%;
+        transform: translate3d(-50%,0,0);
+        margin: 0em !important;
+        width:125px;
+        height: 125px;
+    }
+
+    .product .coast{
+        margin: 10px 20px;
+        font-size: 1.0em;
+        font-weight: bolder;
+        
+    }
+    
+    .product .name{
+        margin: 10px 20px;
+        font-size: 1.0em;
+        height: 40px !important;
+    overflow: hidden !important;
+    
+    }
+
+  
+
+     .partition{
+        color: #170631 !important;
+        margin-top: 2em;
+        margin-left: 2em;
+        font-size: 1.5em;
+    }
+
+    .benefits_name{
+        color: #170631 !important;
+        font-size: 1.5em;
+        text-align: center;
+    margin:3em 0em 1em 0em;
+    }
+    .benefits_name_2{
+       color: #FFFFFF !important;
+    background-color:#170631 !important;
+        font-size: 1.5em;
+        text-align: center;
+    margin:3em 0em 0em 0em;
+    padding-top:0.8em;
+padding-bottom:0.3em;
+    }
+    
+   
+       
+        .benefit .photo{
+    
+            margin: 1em 0em;
+        width:60px;
+        height: 75px;
+    
+        left: 50%;
+        transform: translate3d(-50%,0,0);
+        }
+        .benefit .name{
+            margin: 1em 0em;
+            text-align: center;
+        color:#FFFFFF;
+        font-size: 1.0em;
+        font-weight: bolder;
+        }
+
+}
+
+@media(max-width:600px){
+    .discription{
+        font-size: 0.8em;
+        margin-top: 3em !important;
+        color: #170631 !important;
+   
+    width:80%;
+    }
+
+    .photo {
+        margin-top: 1em;
+         position: relative;
+        width:100%;
+       height: 100px;
+         overflow: hidden;
+         margin-bottom: 1em;
+         justify-content: center;
+        
+     }
+
+    .min_product{
+         transition: 0.5s !important;
+        color: #170631 !important;
+        transform: translate3d(-50%,0,0);
+        margin-left: 50%;
+        width: 100px;
+        border:solid 1px #170631;
+        transition: 100ms ease-in-out;
+        border-radius: 20px;
+    }
+
+    .min_product:hover{
+        background-color: #170631;
+        color: #FFFFFF !important;
+        transform: translate3d(-50%,0,0);
+        margin-left: 50%;
+        width: 100px;
+        border:solid 1px #170631;
+        transition: 100ms ease-in-out;
+        border-radius: 20px;
+    
+    }
+
+    .product .photo {
+        left:50%;
+        transform: translate3d(-50%,0,0);
+        margin: 0em !important;
+        width:75px;
+        height: 100px;
+    }
+
+    .product .coast{
+        margin: 5px 20px;
+        font-size: 0.8em;
+        font-weight: bolder;
+        
+    }
+    
+    .product .name{
+        margin: 5px 20px;
+        font-size: 0.8em;
+        height: 30px !important;
+    overflow: hidden !important;
+    
+    }
+
+   
+
+     .partition{
+        color: #170631 !important;
+        margin-top: 1em;
+        margin-left: 1em;
+        font-size: 1.0em;
+    }
+
+    .benefits_name{
+        color: #170631 !important;
+        font-size: 1.2em;
+        text-align: center;
+    margin:1em 0em 1em 0em;
+    }
+      .benefits_name_2{
+        color: #FFFFFF !important;
+    background-color:#170631 !important;
+        font-size: 1.2em;
+        text-align: center;
+    margin:1em 0em 0em 0em;
+    padding-top:0.5em;
+padding-bottom:0em;
+    }
+    
+    .benefit{
+        position: relative;
+        width: 50%!important;
+        flex-wrap: wrap;
+        }
+   
+       
+        .benefit .photo{
+    
+            margin: 1em 0em;
+        width:40px;
+        height: 50px;
+    
+        left: 50%;
+        transform: translate3d(-50%,0,0);
+        }
+        .benefit .name{
+            margin: 1em 0em;
+            text-align: center;
+        color:#FFFFFF;
+        font-size: 0.7em;
+        font-weight: bolder;
+        }
+
+        .products{
+    
+            margin: 2em 0em !important;
+            display: flex;
+        }
+
+}

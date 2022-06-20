@@ -38,4 +38,4 @@ urlpatterns = [
     path("file/", get_file, name='get_file'),
 ]
 
-handler404 = page_not_found_view
+

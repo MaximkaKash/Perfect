@@ -1,0 +1,154 @@
+.filters{
+    margin: 2em 5em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter{
+    display: flex;
+    margin-bottom: 2em;
+    font-size: 1.2em;
+}
+
+.filter .name{
+    position: relative;
+    padding-top:0.2em;
+   
+}
+
+input { 
+    background-color: #F9F5FF;
+    border:solid 1px #170631;
+    transition: 100ms ease-in-out;
+    border-radius: 0.5em;
+margin-left: 0.5em;
+padding: 0.2em 0.5em ;
+}
+
+.filters button{
+    background-color: #170631;
+    color:#F9F5FF;
+    border:solid 1px #170631;
+    transition: 100ms ease-in-out;
+    border-radius: 0.5em;
+padding: 0.3em 1.5em;
+}
+
+.filters button:hover{
+    background-color: #170631;
+    color:#F9F5FF;
+    border:solid 1px #170631;
+    transition: 100ms ease-in-out;
+    border-radius: 0.5em;
+padding: 0.3em 1.5em;
+text-decoration: underline;
+}
+
+
+
+
+.orders{
+    margin: 0em 5em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.order{
+   
+    width: 500px;
+    padding: 1em 4em;
+    
+}
+
+.border{
+
+    position: relative;
+    border:solid 1px #170631;
+    transition: 100ms ease-in-out;
+
+    border-radius: 1em;
+
+}
+
+.border .name{
+    text-align: center;
+    font-size: 1.4em;
+    margin-top: 1em;
+    
+}
+
+.border .phone{
+    
+    font-size: 1.0em;
+    margin-top: 0.5em;
+    margin-left: 1em;
+}
+
+.border .level{
+    display: flex;
+    
+    margin-top: 1.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.border .code{
+    font-size: 1.4em;
+    font-weight: bolder;
+    width: 50%;
+}
+.border .date{
+    width: 50%;
+    text-align: right;
+    font-size: 1.4em;
+}
+
+.border .button{
+    position: relative;
+
+    margin: 1em 0em;
+    
+    width: 100%;
+    
+}
+
+.conteiner{
+    padding: 0.3em 2em;
+
+    font-size: 1.2em;
+    background-color: #170631;
+   
+    border:solid 1px #170631;
+    transition: 100ms ease-in-out;
+    border-radius: 0.5em;
+    text-align: center;
+    margin: 0% 30%;
+}
+
+ .but{
+     position: relative;
+     color:#F9F5FF;
+ }
+
+ .but:hover{
+    
+    border:solid 1px #170631;
+    color: #f9f5ff !important;
+     text-decoration: underline !important;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

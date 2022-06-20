@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
+from ferumbel.views import page_not_found_view
 # from ferumbel.views import page_not_found_view
 
 urlpatterns = [
@@ -24,7 +25,8 @@ urlpatterns = [
 
 ]
 
-# handler404 = page_not_found_view
+handler404 = page_not_found_view
+
 if settings.DEBUG:
     from django.conf.urls.static import static
     from django.contrib.staticfiles.urls import staticfiles_urlpatterns

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OOO"ФерумБел"</title>
+    {% load bootstrap3 %}
+    <script src="{% bootstrap_jquery_url %}"></script>
+    {% bootstrap_javascript %}
+    {% bootstrap_css %}
+    <link rel="shortcut icon" type="image/ico" href="/media/photos/favicon.ico"/>
+{#    <link rel="stylesheet" href="../../bootstrap-3.3.7-dist/css/bootstrap.css">#}
+    <link rel="stylesheet" href="/static/styles/autorization_admin.css">
+</head>
+<body>
+    <section class="name">
+        ООО "ФерумБел"
+    </section>
+<section class="autorization">
+     <form method="POST">
+            {% csrf_token %}
+    <section class=" box">
+        <section><input type="text" name="login" class="input"  placeholder="Login"></section>
+        <section>
+            <input id="password" name="password" type="password" class="input"  placeholder="Password">
+            <input type="checkbox" id="check"  placeholder="Password" >
+        </section>
+        
+        <a href="/activeOrders/">
+            <button class="button">
+                Enter
+            </button>
+        </a>
+    </section>
+     </form>
+    
+</section>
+
+
+<script src="/static/scripts/autarization_admin.js"></script>
+
+</body>
+</html>
+

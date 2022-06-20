@@ -1,0 +1,30 @@
+    .text{
+        padding-top: 10%;
+        padding-bottom: 15%;
+        color: #170631 !important;
+font-size: 10em;
+text-align: center;
+    }
+
+    @media(max-width:1100px){
+
+        .text{
+            padding-top: 10%;
+            padding-bottom: 15%;
+            color: #170631 !important;
+    font-size: 8em;
+    text-align: center;
+        }
+    }
+
+
+    @media(max-width:900px){
+
+        .text{
+            padding-top: 10%;
+            padding-bottom: 15%;
+            color: #170631 !important;
+    font-size: 6em;
+    text-align: center;
+        }
+    }
