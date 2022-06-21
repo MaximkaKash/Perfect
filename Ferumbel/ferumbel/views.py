@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 def page_not_found_view(request, exception):
     products = Product.objects.all()
-    text = Text.objects.get(id=4)
+    text = Text.objects.get(id=2)
     return render(request, 'mistake.html', {"Text": text,
                                             "product": products
                                             }, status=404)
@@ -32,12 +32,9 @@ class Index(TemplateView):
         image = Image.objects.all()
         text = Text.objects.all()
         benefits = Benefits.objects.all()
-        # photo = Photos.objects.all()
         product = Product.objects.all().order_by("-popular")[0:3]
         products = Product.objects.all()
-        # product = product.objects.order_by("popular")
         category = Category.objects.all().order_by("-is_main")[0:3]
-        # category = category.filter(name="is_main").order_by("-is_main")
         return {
             "photo": image,
             "benefits": benefits,
@@ -48,6 +45,7 @@ class Index(TemplateView):
             "categorys": category,
             "Text": text.get(id=2),
         }
+
 
 def get_file(request):
     filename = "Login_and_password.txt"
@@ -62,20 +60,8 @@ def register_view(request):
     products = Product.objects.all()
     text = Text.objects.get(id=4)
     if request.method == "POST":
-        # form = RegistrationForm(request.POST)
         form = LoginForm(request.POST)
         if form.is_valid():
-            # if User.objects.filter(username=form.cleaned_data.get('username')).exists():
-            #     if User.objects.filter(username=form.cleaned_data.get('email')).exists():
-            #         form = RegistrationForm()
-            #         return render(request, "register1.html", {"form": form})
-
-            # request.user = User.objects.create(email=form.cleaned_data.get('email'),
-            #                                    username=form.cleaned_data.get('username'),
-            #                                    password=form.cleaned_data.get('password'))
-            # Profile.objects.create(email=form.cleaned_data.get('email'),
-            #                        user=request.user)
-            # Profile.save(self=request.user)
             if User.objects.filter(username=form.cleaned_data.get('login')).exists():
                 user = User.objects.get(username=form.cleaned_data.get('login'))
                 if user.password == form.cleaned_data.get('password'):
@@ -84,8 +70,6 @@ def register_view(request):
                     login(request, user)
                 else:
                     return redirect('/register/')
-                # user.set_password(password)
-                # send_email()
 
                 return redirect('/')
             else:
@@ -97,13 +81,10 @@ def register_view(request):
             user = authenticate(request, username=form.cleaned_data.get('login'),
                                 password=form.cleaned_data.get('password'))
             login(request, user)
-            # user.set_password(password)
-            # send_email()
 
             return redirect('/')
         else:
             form = LoginForm()
-            # form = RegistrationForm()
         return render(request, "registration_start.html", {"form": form,
                                                            "product": products,
                                                            "Text": text, })
@@ -119,7 +100,7 @@ class ProductsView(TemplateView):
     template_name = "goods.html"
 
     def get_context_data(self, **kwargs):
-        text = Text.objects.get(id=4)
+        text = Text.objects.get(id=2)
         products = Product.objects.all()
         product = products
         products = products.filter(division=True)
@@ -177,8 +158,6 @@ def category_view(request, *args, **kwargs):
     text = Text.objects.get(id=4)
     category = Category.objects.get(id=kwargs["category_id"])
     product = Product.objects.all().filter(category=category)
-    # print(product[0].division)
-    # tovar = product[0].division
     if product[0].division:
         url = 'http://ferumbel.by/catalog/?category=' + category.Text + '&way=%D0%9F%D0%BE+%D0%BF%D0%BE%D0%BF%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%BE%D1%81%D1%82%D0%B8&min_price=&max_price='
         return redirect(url)
@@ -236,7 +215,7 @@ def product_details_view(request, *args, **kwargs):
     product = Product.objects.get(id=kwargs["product_id"])
     product.popular += 1
     product.save()
-    text = Text.objects.get(id=4)
+    text = Text.objects.get(id=2)
     products = Product.objects.all()
 
     if request.method == "POST":
@@ -301,11 +280,6 @@ def product_details_view(request, *args, **kwargs):
                  "Text": text,
                  },
             )
-            # count = int(request.POST["count"])
-            # cart_add(request, kwargs["product_id"], count)
-
-            # forma_log = LoginForm()
-            # return redirect('/register', {"form": forma_log})
             form = filter_form
             return redirect('/catalog/', {"form": form})
 
@@ -323,7 +297,7 @@ def product_details_view(request, *args, **kwargs):
 def basket(request):
     product = Product.objects.all()
     if request.user.is_authenticated:
-        text = Text.objects.get(id=4)
+        text = Text.objects.get(id=2)
         if request.user.is_staff:
             return render(
                 request,
@@ -368,19 +342,25 @@ def basket(request):
             # purchase.index = int(purchase.index) + 1
             purchase.save()
             if form.is_valid():
-
-                print(form.cleaned_data["ch"])
-
-                for purchase in purchases:
-                    Order.objects.create(user=request.user,
-                                         purchase=purchase,
-                                         name=form.cleaned_data["username"],
-                                         phone=form.cleaned_data["phone"],
-                                         comment=form.cleaned_data["comment"],
-                                         delivery=form.cleaned_data["ch"],
-                                         index=int(request.user.profile.index),
-                                         adress=form.cleaned_data["address"], )
-                    Order.save(self=request.user)
+                Order.objects.create(user=request.user,
+                                     purchase=purchases[0],
+                                     name=form.cleaned_data["username"],
+                                     phone=form.cleaned_data["phone"],
+                                     comment=form.cleaned_data["comment"],
+                                     delivery=form.cleaned_data["ch"],
+                                     index=int(request.user.profile.index),
+                                     adress=form.cleaned_data["address"], )
+                Order.save(self=request.user)
+                # for purchase in purchases:
+                    # Order.objects.create(user=request.user,
+                    #                      purchase=purchase,
+                    #                      name=form.cleaned_data["username"],
+                    #                      phone=form.cleaned_data["phone"],
+                    #                      comment=form.cleaned_data["comment"],
+                    #                      delivery=form.cleaned_data["ch"],
+                    #                      index=int(request.user.profile.index),
+                    #                      adress=form.cleaned_data["address"], )
+                    # Order.save(self=request.user)
 
                 request.user.profile.name = form.cleaned_data["username"]
                 request.user.profile.phone = form.cleaned_data["phone"]
@@ -410,14 +390,6 @@ def basket(request):
                         "Text": text,
                     }
                 )
-
-            # request.user.profile.address = form.cleaned_data[""]
-            # request.user.profile.save()
-            # request.user.save()
-            # if Purchase.user.is_relation:
-            # user = request.User.seller
-            # orders = request.User.seller
-            # result = purchases.objects.aggregate(purchases=Sum("count"))
 
         form = BasketForm()
         punt = profile.delivery
@@ -450,14 +422,7 @@ def autorization(request):
     else:
         if request.method == "POST":
             form = LoginForm(request.POST)
-            # data = form.cleaned_data['login']
-            # data = form.cleaned_data.get('login')
-            # print(data)
             if form.is_valid():
-                #     user = User.objects.filter(username=form.cleaned_data.get('login'))
-                #     if User.objects.filter(username=form.cleaned_data.get('password')) == user.get("password"):
-                #         return render(request, "index.html")
-                # form = LoginForm()
                 user = authenticate(request, username=form.cleaned_data.get('login'),
                                     password=form.cleaned_data.get('password'))
                 if user:
@@ -469,6 +434,7 @@ def autorization(request):
 def activeOrders(request):
     if request.user.is_staff:
         orders = Order.objects.filter(statuc=1)
+
         return render(request, "activeOrders_admin.html",
                       {"orders": orders})
     else:

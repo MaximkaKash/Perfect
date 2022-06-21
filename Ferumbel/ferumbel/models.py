@@ -184,7 +184,9 @@ class Order(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True,
                              verbose_name='Пользователь')
     name = models.TextField(blank=True, null=True, verbose_name='Имя пользователя')
-    purchase = models.OneToOneField(Purchase, on_delete=models.CASCADE, blank=True, null=True, verbose_name='Корзина')
+    purchase = models.ForeignKey(
+        Purchase, on_delete=models.CASCADE, verbose_name=' Корзина'
+    )
     coast = models.IntegerField(blank=True, null=True, default=1, verbose_name='Цена')
     phone = models.CharField(max_length=30, blank=True, null=True, verbose_name='Номер телефона')
     comment = models.TextField(blank=True, null=True, verbose_name='Комментарий')

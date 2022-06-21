@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-21 15:37+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ferumbel/models.py:17
+msgid "Text"
+msgstr "Текст"
+
+#: ferumbel/models.py:18
+msgid "Texts"
+msgstr "Тексты"
+
+#: ferumbel/models.py:29
+msgid "Image"
+msgstr "Картинка"
+
+#: ferumbel/models.py:30
+msgid "Images"
+msgstr "Картинки"
+
+#: ferumbel/models.py:41
+msgid "Photo"
+msgstr "Фотография"
+
+#: ferumbel/models.py:42
+msgid "Photos"
+msgstr "Фотографии"
+
+#: ferumbel/models.py:54
+msgid "Benefict"
+msgstr "Достижение"
+
+#: ferumbel/models.py:55
+msgid "Benefits"
+msgstr "Достижения"
+
+#: ferumbel/models.py:68
+msgid "Contact"
+msgstr "Контакт"
+
+#: ferumbel/models.py:69
+msgid "Contacts"
+msgstr "Контакты"
+
+#: ferumbel/models.py:82
+msgid "Timetable"
+msgstr "График работы"
+
+#: ferumbel/models.py:83
+msgid "Timetables"
+msgstr "Графики работы"
+
+#: ferumbel/models.py:96
+msgid "Category"
+msgstr "Категория"
+
+#: ferumbel/models.py:97
+msgid "Categories"
+msgstr "Категории"
+
+#: ferumbel/models.py:114
+msgid "Product"
+msgstr "Продукт"
+
+#: ferumbel/models.py:115
+msgid "Products"
+msgstr "Продукты"
+
+#: ferumbel/models.py:128
+msgid "Selection"
+msgstr "Секция"
+
+#: ferumbel/models.py:129
+msgid "Selections"
+msgstr "Секции"
+
+#: ferumbel/models.py:145
+msgid "Purchase"
+msgstr "Корзина"
+
+#: ferumbel/models.py:146
+msgid "Purchases"
+msgstr "Корзины"
+
+#: ferumbel/models.py:159
+msgid "Customer"
+msgstr "Продавец"
+
+#: ferumbel/models.py:160
+msgid "Customers"
+msgstr "Продавцы"
+
+#: ferumbel/models.py:179
+msgid "Profile"
+msgstr "Юзер"
+
+#: ferumbel/models.py:180
+msgid "Profiles"
+msgstr "Юзеры"
+
+#: ferumbel/models.py:202
+msgid "Order"
+msgstr "Заказ"
+
+#: ferumbel/models.py:203
+msgid "Orders"
+msgstr "Заказы"
+
+#~ msgid "Russian"
+#~ msgstr "Русский"
+
+#~ msgid "English"
+#~ msgstr "Английский"

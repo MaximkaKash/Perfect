@@ -5,16 +5,195 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a59f7722-0937-469e-9c13-38c4621c5cb4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/media/photos/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ferumbel/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ferumbel/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ferumbel/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ferumbel/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ferumbel/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ferumbel/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/css/autocomplete.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/css/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/css/changelists.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/css/dashboard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/css/fonts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/css/forms.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/css/nav_sidebar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/css/responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/css/responsive_rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/css/rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/css/vendor/select2/LICENSE-SELECT2.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/css/vendor/select2/select2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/css/vendor/select2/select2.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/css/widgets.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/fonts/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/fonts/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/fonts/Roboto-Bold-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/fonts/Roboto-Light-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/fonts/Roboto-Regular-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/calendar-icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/gis/move_vertex_off.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/gis/move_vertex_on.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/icon-addlink.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/icon-alert.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/icon-calendar.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/icon-changelink.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/icon-clock.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/icon-deletelink.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/icon-no.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/icon-unknown-alt.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/icon-unknown.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/icon-viewlink.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/icon-yes.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/inline-delete.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/search.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/selector-icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/sorting-icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/tooltag-add.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/img/tooltag-arrowright.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/SelectBox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/SelectFilter2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/admin/DateTimeShortcuts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/admin/RelatedObjectLookups.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/autocomplete.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/calendar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/cancel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/change_form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/collapse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/inlines.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/jquery.init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/nav_sidebar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/popup_response.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/prepopulate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/prepopulate_init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/urlify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/jquery/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/jquery/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/af.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/ar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/az.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/bg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/bn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/bs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/cs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/da.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/dsb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/el.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/et.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/eu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/fa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/fi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/fr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/gl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/he.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/hi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/hr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/hsb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/hu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/hy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/id.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/is.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/it.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/ja.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/ka.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/km.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/ko.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/lt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/lv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/mk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/ms.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/nb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/ne.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/pl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/ps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/pt-BR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/pt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/ro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/sk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/sl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/sq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/sr-Cyrl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/sr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/sv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/th.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/tk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/tr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/uk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/vi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/zh-CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/i18n/zh-TW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/select2.full.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/select2/select2.full.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/xregexp/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/xregexp/xregexp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/admin/js/vendor/xregexp/xregexp.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/photos/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/photos/arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/photos/arrow2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/photos/basket.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/photos/benefit_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/photos/benefit_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/photos/benefit_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/photos/benefit_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/photos/burger.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/photos/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/photos/instagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/photos/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/photos/mainphoto.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/photos/product.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/scripts/Orders_admin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/scripts/activeOrder_admin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/scripts/autarization_admin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/scripts/basket.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/scripts/goods.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/scripts/header.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/scripts/registration.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/styles/Order_admin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/styles/Orders_admin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/styles/aboutUs.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/styles/autorization_admin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/styles/basket.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/styles/contacts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/styles/footer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/styles/good.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/styles/goods.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/styles/header.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/styles/header_admin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/styles/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/styles/mistake.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/styles/registration.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/aboutUs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/activeOrder_admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/activeOrders_admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/autorization_admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/basket.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/confirmedOrder_admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/confirmedOrders_admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/contacts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/deletedOrder_admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/deletedOrders_admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/good.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/goods.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/goods1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/google9dd23eb0f4291cdd.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/mistake.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferumbel/static/templates/registration_start.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ferumbel/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ferumbel/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ferumbel/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ferumbel/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,17 +222,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/maksim/Python projects/Ferumbel/media/photos",
-    "settings.editor.selected.configurable": "preferences.editor"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/maksim/Python projects/Ferumbel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/media/photos" />
       <recent name="$PROJECT_DIR$/templates" />
     </key>
@@ -101,6 +281,11 @@
       <workItem from="1655208062640" duration="3330000" />
       <workItem from="1655714796337" duration="4698000" />
       <workItem from="1655740139576" duration="3213000" />
+      <workItem from="1655743368103" duration="47000" />
+      <workItem from="1655750015836" duration="475000" />
+      <workItem from="1655811376664" duration="598000" />
+      <workItem from="1655814636712" duration="4753000" />
+      <workItem from="1655827982792" duration="812000" />
     </task>
     <servers />
   </component>
