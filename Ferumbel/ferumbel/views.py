@@ -58,7 +58,7 @@ def get_file(request):
 
 def register_view(request):
     products = Product.objects.all()
-    text = Text.objects.get(id=4)
+    text = Text.objects.get(id=2)
     if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -107,6 +107,8 @@ class ProductsView(TemplateView):
         filter_forms = filter_form(self.request.GET)
 
         if filter_forms.is_valid():
+            print(filter_forms.cleaned_data["category"])
+            print(filter_forms.cleaned_data["category"][:20])
             if filter_forms.cleaned_data["category"]:
                 if filter_forms.cleaned_data["category"] == "Все" or filter_forms.cleaned_data["category"] == "":
                     a = 'Все'
@@ -155,7 +157,7 @@ class ProductsView(TemplateView):
 
 def category_view(request, *args, **kwargs):
     categorys = Category.objects.all()
-    text = Text.objects.get(id=4)
+    text = Text.objects.get(id=2)
     category = Category.objects.get(id=kwargs["category_id"])
     product = Product.objects.all().filter(category=category)
     if product[0].division:
@@ -187,7 +189,7 @@ class Contact(TemplateView):
     def get_context_data(self, **kwargs):
         products = Product.objects.all()
         contacts = Contacts.objects.all()
-        text = Text.objects.get(id=4)
+        text = Text.objects.get(id=2)
         return {
             'product': products,
             "contacts": contacts,
@@ -205,9 +207,9 @@ class AboutUs(TemplateView):
         return {
             'product': products,
             "contacts": timetable,
-            "texts": text.get(id=3),
+            "texts": text.get(id=2),
             "text": text.get(id=2),
-            "Text": text.get(id=4),
+            "Text": text.get(id=2),
         }
 
 
@@ -217,40 +219,34 @@ def product_details_view(request, *args, **kwargs):
     product.save()
     text = Text.objects.get(id=2)
     products = Product.objects.all()
-
+    photos = Photos.objects.all().filter(product=product)
+    print(photos)
     if request.method == "POST":
         if request.user.is_authenticated:
             if request.user.is_staff:
                 customer = Customer.objects.get(user=request.user)
+                user = User.objects.get(id=customer.foruser)
                 Purchase.objects.create(
-                    product=product, user=request.user, count=int(request.POST["count"]),
+                    product=product, user=user, count=int(request.POST["count"]),
                     index=int(customer.index)
                 )
-
-                purchases = Purchase.objects.filter(user=request.user).order_by("-created_at")[0]
-                if customer.foruser:
-                    user = User.objects.get(id=(Order.objects.get(id=customer.foruser).user_id))
-                    Order.objects.create(user=user,
-                                         purchase=purchases,
-                                         delivery=True,
-                                         customer=customer,
-                                         index=int(customer.index),
-                                         )
-                    Order.save(self=request.user)
-                customer.foruser = None
-                customer.save()
-                return redirect("activeOrder_view", order_index=customer.foruser)
+                order = Order.objects.get(user=user, index=customer.index)
+                return redirect("activeOrder_view", order_index=order.id)
+                # url = '/activeOrder/' + str(order)
+                # return redirect(url,order_index=order.id)
             else:
                 profile = Profile.objects.get(user=request.user)
                 Purchase.objects.create(
                     product=product, user=request.user, count=int(request.POST["count"]),
                     index=int(profile.index)
                 )
+
                 return render(
                     request,
                     "good.html",
                     {
                         "a": True,
+                        "photos": photos,
                         "products": product,
                         "product": products,
                         "Text": text,
@@ -275,6 +271,7 @@ def product_details_view(request, *args, **kwargs):
                 request,
                 "good.html",
                 {"a": True,
+                 "photos": photos,
                  "products": product,
                  "product": products,
                  "Text": text,
@@ -287,6 +284,7 @@ def product_details_view(request, *args, **kwargs):
         request,
         "good.html",
         {
+            "photos": photos,
             "products": product,
             "product": products,
             "Text": text,
@@ -352,15 +350,15 @@ def basket(request):
                                      adress=form.cleaned_data["address"], )
                 Order.save(self=request.user)
                 # for purchase in purchases:
-                    # Order.objects.create(user=request.user,
-                    #                      purchase=purchase,
-                    #                      name=form.cleaned_data["username"],
-                    #                      phone=form.cleaned_data["phone"],
-                    #                      comment=form.cleaned_data["comment"],
-                    #                      delivery=form.cleaned_data["ch"],
-                    #                      index=int(request.user.profile.index),
-                    #                      adress=form.cleaned_data["address"], )
-                    # Order.save(self=request.user)
+                # Order.objects.create(user=request.user,
+                #                      purchase=purchase,
+                #                      name=form.cleaned_data["username"],
+                #                      phone=form.cleaned_data["phone"],
+                #                      comment=form.cleaned_data["comment"],
+                #                      delivery=form.cleaned_data["ch"],
+                #                      index=int(request.user.profile.index),
+                #                      adress=form.cleaned_data["address"], )
+                # Order.save(self=request.user)
 
                 request.user.profile.name = form.cleaned_data["username"]
                 request.user.profile.phone = form.cleaned_data["phone"]
@@ -418,6 +416,10 @@ def basket(request):
 
 def autorization(request):
     if request.user.is_staff:
+        if Customer.objects.filter(user=request.user).exists():
+            return redirect("/activeOrders")
+        else:
+            Customer.objects.create(user=request.user)
         return redirect("/activeOrders")
     else:
         if request.method == "POST":
@@ -434,86 +436,174 @@ def autorization(request):
 def activeOrders(request):
     if request.user.is_staff:
         orders = Order.objects.filter(statuc=1)
-
+        print(orders)
         return render(request, "activeOrders_admin.html",
                       {"orders": orders})
     else:
         return redirect("/")
 
 
+# def activeOrder_view(request, *args, **kwargs):
+#     if request.user.is_staff:
+#         user = Order.objects.get(id=kwargs["order_index"]).user_id
+#         index = Order.objects.get(id=kwargs["order_index"]).index
+#         orders = Order.objects.filter(user_id=user).filter(index=index)
+#         profile = User.objects.get(id=user)
+#         profile = Profile.objects.get(user=profile)
+#         # index = int(Order.objects.filter(index=kwargs["order_index"])[0].index)
+#         sum = 0
+#         count = 0
+#         for orde in orders:
+#             coast = 0
+#             coast = coast + int(orde.purchase.count) * int(orde.purchase.product.coast)
+#             orde.coast = coast
+#             count = count + int(orde.purchase.count)
+#             sum = sum + coast
+#             orde.save()
+#             print(orde.delivery)
+#         if request.method == "POST":
+#             form = BasketForm(request.POST)
+#             if request.POST.get("action", "") == "add":
+#                 customer = Customer.objects.get(user=request.user)
+#                 customer.index = index
+#                 foruser = Order.objects.get(id=kwargs["order_index"]).user_id
+#                 customer.foruser = kwargs["order_index"]
+#                 print(customer.foruser, user, foruser)
+#                 customer.save()
+#                 return redirect("/catalog/")
+#             elif request.POST.get("action", "") == "delete":
+#                 customer = Customer.objects.get(user=request.user)
+#                 for orde in orders:
+#                     orde.statuc = 3
+#                     orde.customer = customer
+#                     orde.save()
+#                 return redirect("/activeOrders")
+#             elif request.POST.get("action", "") == "confirm":
+#                 customer = Customer.objects.get(user=request.user)
+#                 for orde in orders:
+#                     orde.customer = customer
+#                     orde.statuc = 2
+#                     orde.save()
+#                 profile = Profile.objects.get(user_id=user)
+#                 # print(form.cleaned_data["username"])
+#                 print(form)
+#                 if form.is_valid():
+#                     for order in orders:
+#                         orde.name = form.cleaned_data["username"]
+#                         orde.phone = form.cleaned_data["phone"]
+#                         if form.cleaned_data["ch"] == True:
+#                             orde.delivery = form.cleaned_data["ch"]
+#                             orde.adress = form.cleaned_data["address"]
+#                         else:
+#                             orde.delivery = False
+#                             orde.adress = 'Фоминых 46/2-1'
+#                         orde.comment = form.cleaned_data["comment"]
+#                         orde.save()
+#                 return redirect("/activeOrders/")
+#             elif request.POST['delete']:
+#                 orde = Order.objects.get(id=int(request.POST['delete']))
+#                 orde.delete()
+#                 orders = Order.objects.filter(user_id=user).filter(index=index)[0].id
+#                 return redirect("activeOrder_view", order_index=orders)
+#         form = BasketForm()
+#         return render(
+#             request,
+#             "activeOrder_admin.html",
+#             {
+#                 "punt": orders[0].delivery,
+#                 "orders": orders,
+#                 "sum": sum,
+#                 "count": count,
+#                 "index": index,
+#                 "profile": orders[0]
+#             },
+#         )
+#     return redirect("/")
+
+
 def activeOrder_view(request, *args, **kwargs):
     if request.user.is_staff:
         user = Order.objects.get(id=kwargs["order_index"]).user_id
         index = Order.objects.get(id=kwargs["order_index"]).index
-        orders = Order.objects.filter(user_id=user).filter(index=index)
+        purchases = Purchase.objects.filter(user_id=user).filter(index=index)
+        order = Order.objects.all().get(id=kwargs["order_index"])
         profile = User.objects.get(id=user)
         profile = Profile.objects.get(user=profile)
+        print(order.user_id)
         # index = int(Order.objects.filter(index=kwargs["order_index"])[0].index)
         sum = 0
         count = 0
-        for orde in orders:
+        for purchase in purchases:
             coast = 0
-            coast = coast + int(orde.purchase.count) * int(orde.purchase.product.coast)
-            orde.coast = coast
-            count = count + int(orde.purchase.count)
+            coast = coast + int(purchase.count) * int(purchase.product.coast)
+            count = count + int(purchase.count)
+            purchase.coast = coast
             sum = sum + coast
-            orde.save()
-            print(orde.delivery)
+        order.coast = sum
+        order.save()
         if request.method == "POST":
             form = BasketForm(request.POST)
-            if request.POST.get("action", "") == "add":
+
+            if request.POST.get("action", "") == "add":  # Добавление нового товара
                 customer = Customer.objects.get(user=request.user)
                 customer.index = index
                 foruser = Order.objects.get(id=kwargs["order_index"]).user_id
-                customer.foruser = kwargs["order_index"]
+                customer.foruser = foruser
                 print(customer.foruser, user, foruser)
                 customer.save()
                 return redirect("/catalog/")
-            elif request.POST.get("action", "") == "delete":
+
+            elif request.POST.get("action", "") == "delete":  # Удаление заказа
                 customer = Customer.objects.get(user=request.user)
-                for orde in orders:
-                    orde.statuc = 3
-                    orde.customer = customer
-                    orde.save()
+                order.statuc = 3
+                order.customer = customer
+                order.save()
                 return redirect("/activeOrders")
-            elif request.POST.get("action", "") == "confirm":
+
+            elif request.POST.get("action", "") == "confirm":  # Подтверждение заказа
                 customer = Customer.objects.get(user=request.user)
-                for orde in orders:
-                    orde.customer = customer
-                    orde.statuc = 2
-                    orde.save()
+                order.customer = customer
+                order.statuc = 2
+                order.save()
                 profile = Profile.objects.get(user_id=user)
-                # print(form.cleaned_data["username"])
-                print(form)
                 if form.is_valid():
-                    for order in orders:
-                        orde.name = form.cleaned_data["username"]
-                        orde.phone = form.cleaned_data["phone"]
-                        if form.cleaned_data["ch"] == True:
-                            orde.delivery = form.cleaned_data["ch"]
-                            orde.adress = form.cleaned_data["address"]
-                        else:
-                            orde.delivery = False
-                            orde.adress = 'Фоминых 46/2-1'
-                        orde.comment = form.cleaned_data["comment"]
-                        orde.save()
+                    order.name = form.cleaned_data["username"]
+                    order.phone = form.cleaned_data["phone"]
+                    if form.cleaned_data["ch"] == True:
+                        order.delivery = form.cleaned_data["ch"]
+                        order.adress = form.cleaned_data["address"]
+                    else:
+                        order.delivery = False
+                        order.adress = 'Фоминых 46/2-1'
+                    order.comment = form.cleaned_data["comment"]
+                    order.save()
                 return redirect("/activeOrders/")
-            elif request.POST['delete']:
-                orde = Order.objects.get(id=int(request.POST['delete']))
-                orde.delete()
-                orders = Order.objects.filter(user_id=user).filter(index=index)[0].id
-                return redirect("activeOrder_view", order_index=orders)
+
+            elif request.POST['delete']:  # Удаление товара в заказе
+                purch = Purchase.objects.get(id=int(request.POST['delete']))
+                purch.delete()
+                purchases = Purchase.objects.filter(user_id=user).filter(index=index)
         form = BasketForm()
+        sum = 0
+        count = 0
+        for purchase in purchases:
+            coast = 0
+            coast = coast + int(purchase.count) * int(purchase.product.coast)
+            count = count + int(purchase.count)
+            purchase.coast = coast
+            sum = sum + coast
+        order.coast = sum
+        order.save()
         return render(
             request,
             "activeOrder_admin.html",
             {
-                "punt": orders[0].delivery,
-                "orders": orders,
+                "punt": order.delivery,
+                "purchases": purchases,
                 "sum": sum,
                 "count": count,
                 "index": index,
-                "profile": orders[0]
+                "profile": order,
             },
         )
     return redirect("/")
@@ -532,46 +622,44 @@ def confirmedOrder_view(request, *args, **kwargs):
     if request.user.is_staff:
         user = Order.objects.get(id=kwargs["order_index"]).user_id
         index = Order.objects.get(id=kwargs["order_index"]).index
-        orders = Order.objects.filter(user_id=user).filter(index=index)
+        order = Order.objects.all().get(id=kwargs["order_index"])
+        purchases = Purchase.objects.filter(user_id=user).filter(index=index)
         profile = User.objects.get(id=user)
         profile = Profile.objects.get(user=profile)
-        print(orders)
         if request.method == "POST":
             if request.POST["action"] == "delete":
                 customer = Customer.objects.get(user=request.user)
-                for orde in orders:
-                    orde.customer = customer
-                    orde.statuc = 3
-                    orde.save()
+                order.customer = customer
+                order.statuc = 3
+                order.save()
                 return redirect("/confirmedOrders/")
             elif request.POST["action"] == "vosstan":
                 customer = Customer.objects.get(user=request.user)
-                for orde in orders:
-                    orde.customer = customer
-                    orde.statuc = 1
-                    orde.save()
+                order.customer = customer
+                order.statuc = 1
+                order.save()
                 return redirect("/confirmedOrders/")
+
         sum = 0
         count = 0
-
-        for orde in orders:
+        for purchase in purchases:
             coast = 0
-            coast = coast + int(orde.purchase.count) * int(orde.purchase.product.coast)
-            orde.coast = coast
-            count = count + int(orde.purchase.count)
+            coast = coast + int(purchase.count) * int(purchase.product.coast)
+            count = count + int(purchase.count)
+            purchase.coast = coast
             sum = sum + coast
-            punt = orde.delivery
-            orde.save()
+        order.coast = sum
+        order.save()
         return render(
             request,
             "confirmedOrder_admin.html",
             {
-                "punt": punt,
-                "orders": orders,
+                "punt": order.delivery,
+                "purchases": purchases,
                 "sum": sum,
                 "count": count,
                 "index": index,
-                "profile": orders[0],
+                "profile": order,
             },
         )
     return redirect("/")
@@ -590,35 +678,36 @@ def deletedOrder_view(request, *args, **kwargs):
     if request.user.is_staff:
         user = Order.objects.get(id=kwargs["order_index"]).user_id
         index = Order.objects.get(id=kwargs["order_index"]).index
-        orders = Order.objects.filter(user_id=user).filter(index=index)
+        order = Order.objects.all().get(id=kwargs["order_index"])
+        purchases = Purchase.objects.filter(user_id=user).filter(index=index)
         profile = User.objects.get(id=user)
         profile = Profile.objects.get(user=profile)
         if request.method == "POST":
             if request.POST["action"] == "vosstan":
                 customer = Customer.objects.get(user=request.user)
-                for orde in orders:
-                    orde.customer = customer
-                    orde.statuc = 2
-                    orde.save()
+                order.customer = customer
+                order.statuc = 2
+                order.save()
                 return redirect("/deletedOrders")
         sum = 0
         count = 0
-        for orde in orders:
+        for purchase in purchases:
             coast = 0
-            coast = coast + int(orde.purchase.count) * int(orde.purchase.product.coast)
-            orde.coast = coast
-            count = count + int(orde.purchase.count)
+            coast = coast + int(purchase.count) * int(purchase.product.coast)
+            count = count + int(purchase.count)
+            purchase.coast = coast
             sum = sum + coast
-            orde.save()
+        order.coast = sum
+        order.save()
         return render(
             request,
             "deletedOrder_admin.html",
             {
-                "orders": orders,
+                "purchases": purchases,
                 "sum": sum,
                 "count": count,
                 "index": index,
-                "profile": profile,
+                "profile": order,
             },
         )
     return redirect("/")
@@ -628,7 +717,7 @@ class ProductsView1(TemplateView):
     template_name = "goods1.html"
 
     def get_context_data(self, **kwargs):
-        text = Text.objects.get(id=4)
+        text = Text.objects.get(id=2)
         products = Product.objects.all()
         product = products
         products = products.filter(division=False)

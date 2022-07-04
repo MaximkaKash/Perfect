@@ -93,22 +93,18 @@
 
             <section id="populate"  class="mainFilter ml-2 mb-2">
                 <select class=" filter_area" name="way" aria-label="Default select example">
-                    {% if way %}
                     {% if way == "По популярности" %}
                     <option selected value="По популярности">По популярности</option>
                     <option value="По возростанию цены">По возрастанию цены</option>
                     <option value="По убыванию цены">По убыванию цены</option>
-                    {% endif %}
-                    {% if way == "По возрастанию цены" %}
+                    {% elif way == "По возрастанию цены" %}
                     <option value="По популярности">По популярности</option>
                     <option selected value="По возростанию цены">По возрастанию цены</option>
                     <option value="По убыванию цены">По убыванию цены</option>
-                    {% endif %}
-                    {% if way == "По убыванию цены" %}
+                    {% elif way == "По убыванию цены" %}
                     <option value="По популярности">По популярности</option>
                     <option value="По возростанию цены">По возрастанию цены</option>
                     <option selected value="По убыванию цены">По убыванию цены</option>
-                    {% endif %}
                     {% else %}
                     <option selected value="По популярности">По популярности</option>
                     <option value="По возростанию цены">По возрастанию цены</option>

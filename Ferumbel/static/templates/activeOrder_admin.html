@@ -127,17 +127,17 @@
                 <button class="plus" name="action" value="add">✚</button>
 
         </section>
-        {% for order in orders %}
+        {% for purchase in purchases %}
             <section class="product">
 
                 <section class="conteiner">
-                    <section class="name"> {{ order.purchase.product.name }}</section>
-                    <section class="name">Код товара: №{{ order.purchase.product.id }}</section>
+                    <section class="name"> {{ purchase.product.name }}</section>
+                    <section class="name">Код товара: №{{ purchase.product.id }}</section>
                 </section>
-                <section class="quality">{{ order.purchase.count }}</section>
-                <section class="quality">{{ order.coast }}р.</section>
+                <section class="quality">{{ purchase.count }}</section>
+                <section class="quality">{{ purchase.coast }}р.</section>
 
-                    <button class="delete" name="delete" value={{ order.id }}>X</button>
+                    <button class="delete" name="delete" value={{ purchase.id }}>X</button>
 
             </section>
         {% endfor %}

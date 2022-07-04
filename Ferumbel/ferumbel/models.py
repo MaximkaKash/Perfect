@@ -30,18 +30,6 @@ class Image(models.Model):
         verbose_name_plural = _("Images")
 
 
-class Photos(models.Model):
-    photo = models.ImageField(null=True, blank=True, verbose_name="Фото")
-
-    def __str__(self):
-        return f"{self.photo}"
-
-    class Meta:
-        ordering = ["id"]
-        verbose_name = _("Photo")
-        verbose_name_plural = _("Photos")
-
-
 class Benefits(models.Model):
     photo = models.ImageField(verbose_name="Фото")
     value = models.TextField(verbose_name="Значение")
@@ -113,6 +101,19 @@ class Product(models.Model):
         ordering = ["id"]
         verbose_name = _("Product")
         verbose_name_plural = _("Products")
+
+
+class Photos(models.Model):
+    product = models.ForeignKey(Product,on_delete=models.CASCADE, blank=True)
+    photo = models.ImageField(null=True, blank=True, verbose_name="Фото")
+
+    def __str__(self):
+        return f"{self.photo}"
+
+    class Meta:
+        ordering = ["id"]
+        verbose_name = _("Photo")
+        verbose_name_plural = _("Photos")
 
 
 class Sections(models.Model):

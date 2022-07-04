@@ -74,14 +74,25 @@
         <section class="col-lg-1 col-sm-1 ol-md-1 col-1 "></section>
         <section class="col-lg-1  col-sm-1 ol-md-1 col-1 name">Способ доставки</section>
         <section class="col-lg-3  col-sm-3 col-md-3 col-3 option">
-            <section class="task">
-                <input readonly id="sam" name="ch" class="radiobut" type="radio"></input>
-                <input readonly value="Самовывоз" class="value"></input>
-            </section>
-            <section class="task">
-                <input id="dos" name="ch" checked class="radiobut" type="radio"></input>
-                <input readonly readonly value="Доставка" class="value"></input>
-            </section>
+            {% if punt %}
+                <section class="task">
+                    <input id="sam" name="ch" value="{{ False }}" class="radiobut" type="radio"></input>
+                    <input readonly value="Самовывоз" class="value"></input>
+                </section>
+                <section class="task">
+                    <input id="dos" name="ch" checked class="radiobut" value="{{ True }}" type="radio"></input>
+                    <input readonly value="Доставка" class="value"></input>
+                </section>
+                {% else %}
+                <section class="task">
+                    <input id="sam" name="ch" value="{{ False }}" checked  class="radiobut" type="radio"></input>
+                    <input readonly value="Самовывоз" class="value"></input>
+                </section>
+                <section class="task">
+                    <input id="dos" name="ch" class="radiobut" value="{{ True }}" type="radio"></input>
+                    <input readonly value="Доставка" class="value"></input>
+                </section>
+                {% endif %}
         </section>
     </section>
     <section id="adres" class="topic row">
@@ -112,14 +123,14 @@
         <section class="quality">Количество</section>
         <section class="quality">Цена</section>
     </section>
-{% for order in orders %}
+{% for purchase in purchases%}
     <section class="product">
         <section class="conteiner">
-            <section class="name"> {{ order.purchase.product.name}}</section>
-            <section class="name">Код товара: №{{ order.id }}</section>
+            <section class="name"> {{ purchase.product.name}}</section>
+            <section class="name">Код товара: №{{ purchase.product.id }}</section>
         </section>
-        <section class="quality">{{ order.purchase.count }}</section>
-        <section class="quality">{{ order.coast }}р.</section>
+        <section class="quality">{{ purchase.product.count }}</section>
+        <section class="quality">{{ purchase.coast }}р.</section>
 
     </section>
 {% endfor %}
