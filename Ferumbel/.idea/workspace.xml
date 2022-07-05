@@ -7,14 +7,9 @@
     <list default="true" id="a59f7722-0937-469e-9c13-38c4621c5cb4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ferumbel/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/ferumbel/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ferumbel/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ferumbel/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ferumbel/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ferumbel/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/activeOrder_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/activeOrder_admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/templates/confirmedOrder_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/confirmedOrder_admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/templates/deletedOrder_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/deletedOrder_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/good.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/good.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/goods.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/goods.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +111,8 @@
       <workItem from="1656333817753" duration="4275000" />
       <workItem from="1656418900329" duration="3389000" />
       <workItem from="1656702238843" duration="55000" />
-      <workItem from="1656958523732" duration="842000" />
+      <workItem from="1656958523732" duration="1062000" />
+      <workItem from="1657000861956" duration="1504000" />
     </task>
     <servers />
   </component>

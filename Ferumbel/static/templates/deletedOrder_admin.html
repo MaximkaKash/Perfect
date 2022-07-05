@@ -50,7 +50,7 @@
 </section>
 
 <section id="main_name">
-    #{{ index }} Удалённый товар
+    #{{ profile.id }} Удалённый товар
 </section>
 
 <section class="but">
@@ -129,7 +129,7 @@
             <section class="name"> {{ purchase.product.name}}</section>
             <section class="name">Код товара: №{{ purchase.product.id }}</section>
         </section>
-        <section class="quality">{{ purchase.product.count }}</section>
+        <section class="quality">{{ purchase.count }}</section>
         <section class="quality">{{ purchase.coast }}р.</section>
 
     </section>

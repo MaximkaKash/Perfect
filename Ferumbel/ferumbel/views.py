@@ -531,16 +531,6 @@ def activeOrder_view(request, *args, **kwargs):
         profile = Profile.objects.get(user=profile)
         print(order.user_id)
         # index = int(Order.objects.filter(index=kwargs["order_index"])[0].index)
-        sum = 0
-        count = 0
-        for purchase in purchases:
-            coast = 0
-            coast = coast + int(purchase.count) * int(purchase.product.coast)
-            count = count + int(purchase.count)
-            purchase.coast = coast
-            sum = sum + coast
-        order.coast = sum
-        order.save()
         if request.method == "POST":
             form = BasketForm(request.POST)
 

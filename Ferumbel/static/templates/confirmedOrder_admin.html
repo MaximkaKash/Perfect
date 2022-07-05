@@ -50,7 +50,7 @@
 </section>
 
 <section id="main_name">
-    #{{ index }} Подтвержденный товар
+    #{{ profile.id }} Подтвержденный товар
 </section>
 
 <section class="but">
@@ -130,7 +130,7 @@
                 <section class="name">Код товара: №{{ purchase.product.id }} </section>
             </section>
             <section class="quality">{{ purchase.count }}</section>
-            <section class="quality">{{ purchase.product.coast }}р.</section>
+            <section class="quality">{{ purchase.coast }}р.</section>
 
         </section>
     {% endfor %}
