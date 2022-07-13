@@ -104,7 +104,7 @@ class Product(models.Model):
 
 
 class Photos(models.Model):
-    product = models.ForeignKey(Product,on_delete=models.CASCADE, blank=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, blank=True, null=True, verbose_name="Картинки")
     photo = models.ImageField(null=True, blank=True, verbose_name="Фото")
 
     def __str__(self):
